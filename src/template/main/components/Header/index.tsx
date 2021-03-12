@@ -3,6 +3,7 @@ import React from 'react';
 import OctoImage from '../../../../assets/octo.png';
 import SearchField from './components/SearchField';
 import Title from './components/Title';
+
 import './styles.scss';
 
 const Header: React.FC = () => {
