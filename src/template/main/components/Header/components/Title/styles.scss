@@ -1,0 +1,19 @@
+@import '../../../../../../shared/styles/global.scss';
+
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.title-icon{
+    margin-right: 10px;
+}
+
+.title-name{
+    margin-right: 10px;
+    font-weight: $fontBold;
+    font-size: $fontTitleSize;
+    border-bottom: 3px solid $accentColor;
+    height: 100%;
+}

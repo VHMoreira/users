@@ -1,0 +1,28 @@
+$principalColor: #030119;
+$secondaryColor: #060227 !global;
+$accentColor: #0053fb;
+
+
+$fontColor: white;
+$fontBold: 700;
+$fontMedium: 600;
+$fontNormal: 500;
+
+$fontTitleSize: 20px;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    color: $fontColor;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $principalColor;
+}
+
+code {
+    font-weight: $fontNormal;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}

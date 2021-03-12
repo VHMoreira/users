@@ -1,0 +1,16 @@
+@import '../../../../shared/styles/global.scss';
+
+.header{
+    background-color: $secondaryColor;
+    max-width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+}
+
+.header-img {
+    height: 70px;
+    width: 70px;
+    margin-right: 20px;
+}

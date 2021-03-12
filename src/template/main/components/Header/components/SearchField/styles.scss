@@ -1,0 +1,24 @@
+@import '../../../../../../shared/styles/global.scss';
+
+.input{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    padding: 5px;
+    border: 3px solid white;
+}
+
+.input:focus-within{
+    border: 3px solid $accentColor;
+}
+
+.input-field{
+    border: 0;
+    outline: 0;
+}
+
+.input-icon{
+    color: $accentColor;
+    padding: 3px;
+}
