@@ -10,14 +10,14 @@ interface SearchRequest {
 
 interface DetailsResponse {
     user: User;
-    repos: Repository;
-    starred: Repository;
+    repos: Repository[];
+    starred: Repository[];
 }
 interface UserContextData {
     users: User[];
     loadUsers(): Promise<void>;
     searchUsers(search: SearchRequest): Promise<void>;
-    getUserDetail(username: string): Promise<any>;
+    getUserDetail(username: string): Promise<DetailsResponse>;
 }
 
 const UserContext = createContext<UserContextData>({} as UserContextData);
@@ -75,7 +75,7 @@ const UserProvider: React.FC = ({ children }) => {
     }, []);
 
     const loadUsers = useCallback(async (): Promise<void> => {
-        const { status, data } = await githubClient.GET({ url: '/users?per_page=10' });
+        const { status, data } = await githubClient.GET({ url: '/users?per_page=100' });
 
         if (status !== 200) {
             toast('Não foi possivel fazer o carregamento dos usuários');
