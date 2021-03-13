@@ -8,7 +8,7 @@ const SearchField: React.FC = () => {
     const { searchUsers } = useUser();
     return (
         <div className='input'>
-            <input className="input-field" type="text" onChange={async ({ target }) => await searchUsers({ name: target.value })} />
+            <input className="input-field" placeholder='Buscar usuário' type="text" onChange={async ({ target }) => await searchUsers({ name: target.value })} />
             <FaSearch className="input-icon" size={18} />
         </div>
     );

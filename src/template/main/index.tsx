@@ -16,8 +16,8 @@ const Main: React.FC = () => {
 
   return (
     <main className="main">
-      <Header />
       <Router>
+        <Header />
         <Routes />
       </Router>
     </main>

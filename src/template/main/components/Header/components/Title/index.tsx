@@ -1,15 +1,14 @@
 import React from 'react';
-import { FaHome } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 import './styles.scss';
 
 const Title: React.FC = () => {
     return (
         <section className="title">
-            <FaHome className="title-icon" size={30} />
-            <span className="title-name">
+            <Link className="title-name" to="/">
                 GitView
-            </span>
+            </Link>
         </section>
     );
 }
