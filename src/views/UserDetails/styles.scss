@@ -2,7 +2,54 @@
 
 .user{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     max-width: 100%;
     padding: 20px 5px;
+}
+
+.tabs{
+    margin-top: 20px;
+    width: 100%;
+    max-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid rgb(43, 43, 43);
+}
+
+.tabs-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 100%;
+    flex: 1;
+    margin: 3px;
+    padding: 10px;
+    background-color: transparent;
+    color: gray;
+    cursor: pointer;
+
+    svg{
+        margin-right: 10px;
+    }
+}
+
+.tabs-button:hover{
+    color: white;
+    background-color: $secondaryColor;
+}
+
+.tabs-button--active{
+    color: white;
+    background-color: $secondaryColor;
+}
+
+.repository{
+    display: flex;
+    align-items: center;
+    width: 100%;
 }

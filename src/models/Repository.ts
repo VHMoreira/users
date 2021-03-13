@@ -1,8 +1,11 @@
-
+interface Owner {
+    avatar_url: string;
+}
 
 interface Repository {
     id: number;
     node_id: string;
+    owner: Owner;
     name: string;
     full_name: string;
     html_url: string;

@@ -1,0 +1,61 @@
+@import '../../../../shared/styles/global.scss';
+
+.item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100%;
+    // max-width: 1000px;
+    height: 70px;
+    padding: 10px;
+    background-color: $secondaryColor;
+    cursor: pointer;
+
+    &+a{
+        margin-top: 30px;
+    }
+}
+
+.item-avatar{
+    border-radius: 50%;
+    height: 100%;
+}
+
+.info{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.info-name{
+    font-weight: $fontMedium;
+    font-size: 1.2rem;
+}
+
+.info-clone{
+    margin-top: 5px;
+    font-size: 1rem;
+    font-weight: $fontMedium;
+    color: rgb(131, 131, 131);
+}
+
+.info-stats{
+    margin-top: 5px;
+    display: flex;
+}
+
+.info-stats__numbers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &+&{
+        margin-left: 20px;
+    }
+
+    svg{
+        margin-right: 5px;
+    }
+}

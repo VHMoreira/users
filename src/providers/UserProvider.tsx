@@ -28,7 +28,6 @@ const UserProvider: React.FC = ({ children }) => {
     const [users, setUsers] = useState<User[]>([]);
 
     const getUserDetail = useCallback(async (username: string): Promise<DetailsResponse> => {
-        // const { status: userStatus, data: userData } = await githubClient.GET({ url: `https://api.github.com/users/${username}` });
         const [userResponse, reposResponse, starredResponse] = await Promise.all([
             githubClient.GET({ url: `https://api.github.com/users/${username}` }),
             githubClient.GET({ url: `https://api.github.com/users/${username}/repos` }),
