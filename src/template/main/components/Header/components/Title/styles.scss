@@ -17,3 +17,10 @@
     border-bottom: 3px solid $accentColor;
     height: 100%;
 }
+
+@media(max-width: 600px){
+    .title{
+        margin: 10px 0;
+        justify-content: center;
+    }
+}

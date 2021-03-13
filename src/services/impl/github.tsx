@@ -14,7 +14,7 @@ class GithubClient implements Service {
     client: AxiosInstance;
     constructor() {
         this.client = axios.create({
-            baseURL: 'https://api.github.com/users',
+            baseURL: 'https://api.github.com',
         });
     }
 
@@ -27,3 +27,5 @@ class GithubClient implements Service {
     }
 
 }
+
+export default GithubClient;
