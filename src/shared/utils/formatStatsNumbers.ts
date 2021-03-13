@@ -1,4 +1,4 @@
-export default (stats: number) => {
+const formatStatsNumber = (stats: number) => {
 
     if (stats > 1000000000) {
         const dividedStats = (stats / 1000).toFixed(1);
@@ -12,3 +12,5 @@ export default (stats: number) => {
 
     return stats;
 }
+
+export default formatStatsNumber;

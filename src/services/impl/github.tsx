@@ -19,11 +19,18 @@ class GithubClient implements Service {
     }
 
     async GET({ url }: Request): Promise<Response> {
-        const { data, status } = await this.client.get(url);
-        return {
-            data,
-            status
-        };
+        try {
+            const { data, status } = await this.client.get(url);
+            return {
+                data,
+                status
+            };
+        } catch {
+            return {
+                data: [],
+                status: 400
+            }
+        }
     }
 
 }

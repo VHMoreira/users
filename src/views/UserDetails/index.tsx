@@ -1,6 +1,5 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaFolder, FaStar } from 'react-icons/fa';
-import { RiUserReceived2Fill, RiUserSharedFill } from 'react-icons/ri'
 import { useRouteMatch } from 'react-router-dom';
 import Repository from '../../models/Repository';
 import User from '../../models/User';
@@ -29,7 +28,7 @@ const UserDetails: React.FC = () => {
             setRepos(repos);
             setStarred(starred);
         });
-    }, [params.username]);
+    }, [params.username, getUserDetail]);
 
     const SelectedList = () => {
         switch (selectedTab) {

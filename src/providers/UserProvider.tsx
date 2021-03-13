@@ -1,5 +1,5 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
-import { toast } from 'react-toastify';
+import { useToasts } from 'react-toast-notifications';
 import Repository from '../models/Repository';
 import User from '../models/User';
 import GithubClient from '../services/impl/github';
@@ -25,6 +25,7 @@ const UserContext = createContext<UserContextData>({} as UserContextData);
 const githubClient = new GithubClient();
 
 const UserProvider: React.FC = ({ children }) => {
+    const { addToast } = useToasts();
     const [users, setUsers] = useState<User[]>([]);
 
     const getUserDetail = useCallback(async (username: string): Promise<DetailsResponse> => {
@@ -39,15 +40,17 @@ const UserProvider: React.FC = ({ children }) => {
         const { status: starredStatus, data: starredData } = starredResponse;
 
         if (userStatus !== 200) {
-            toast('Não foi possivel encontrar o usuário');
+            addToast('Não foi possivel encontrar o usuário', {
+                appearance: 'error'
+            });
         }
 
         if (reposStatus !== 200) {
-            toast('Não foi possivel encontrar repositórios do usuário');
+            addToast('Não foi possivel encontrar repositórios do usuário');
         }
 
         if (starredStatus !== 200) {
-            toast('Não foi possivel encontrar favoritos o usuário');
+            addToast('Não foi possivel encontrar favoritos o usuário');
         }
 
         return {
@@ -55,7 +58,7 @@ const UserProvider: React.FC = ({ children }) => {
             repos: reposData,
             starred: starredData
         };
-    }, []);
+    }, [addToast]);
 
     const searchUsers = useCallback(async ({ name }: SearchRequest) => {
         if (name.length > 3) {
@@ -66,23 +69,23 @@ const UserProvider: React.FC = ({ children }) => {
             const { items: userItems } = userData;
 
             if (userStatus !== 200) {
-                toast('Não foi possivel encontrar o usuário');
+                addToast('Não foi possivel encontrar o usuário');
                 return
             }
 
             setUsers(userItems);
         }
-    }, []);
+    }, [addToast]);
 
     const loadUsers = useCallback(async (): Promise<void> => {
         const { status, data } = await githubClient.GET({ url: '/users?per_page=100' });
 
         if (status !== 200) {
-            toast('Não foi possivel fazer o carregamento dos usuários');
+            addToast('Não foi possivel fazer o carregamento dos usuários');
         }
 
         setUsers(data);
-    }, [])
+    }, [addToast])
 
 
     return (

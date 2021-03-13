@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaChevronRight, FaCodeBranch, FaEye, FaStar } from 'react-icons/fa';
+import { FaChevronRight, FaCodeBranch, FaStar } from 'react-icons/fa';
 import { FiAlertCircle } from "react-icons/fi";
 import Repository from '../../../../models/Repository';
 import formatStatsNumbers from '../../../../shared/utils/formatStatsNumbers';
