@@ -1,12 +1,39 @@
 import React from 'react';
+import List from '../../shared/components/List';
+import UserListItem from './components/UserListItem';
 
 import './styles.scss';
 
 const Users: React.FC = () => {
     return (
-        <div className="users">
-            Users
-        </div>
+        <section className="users">
+            <List>
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+                <UserListItem />
+            </List>
+        </section>
     );
 }
 

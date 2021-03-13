@@ -1,5 +1,5 @@
-$principalColor: #030119;
-$secondaryColor: #060227 !global;
+$principalColor: #04021a;
+$secondaryColor: #0a0442;
 $accentColor: #0053fb;
 
 
@@ -25,4 +25,14 @@ code {
     font-weight: $fontNormal;
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
+}
+
+button{
+    cursor: pointer;
+}
+
+ul, li{
+    list-style: none;
+    margin: 10px 0;
+    padding: 0;
 }

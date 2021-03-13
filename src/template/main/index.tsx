@@ -8,12 +8,12 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 const Main: React.FC = () => {
   return (
-    <div className="main">
+    <main className="main">
       <Header />
       <Router>
         <Routes />
       </Router>
-    </div>
+    </main>
   );
 }
 

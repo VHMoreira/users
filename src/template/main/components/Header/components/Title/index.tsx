@@ -5,12 +5,12 @@ import './styles.scss';
 
 const Title: React.FC = () => {
     return (
-        <div className="title">
+        <section className="title">
             <FaHome className="title-icon" size={30} />
             <span className="title-name">
                 Busca de usuários
             </span>
-        </div>
+        </section>
     );
 }
 
