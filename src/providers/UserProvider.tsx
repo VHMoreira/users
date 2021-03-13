@@ -46,11 +46,15 @@ const UserProvider: React.FC = ({ children }) => {
         }
 
         if (reposStatus !== 200) {
-            addToast('Não foi possivel encontrar repositórios do usuário');
+            addToast('Não foi possivel encontrar repositórios do usuário', {
+                appearance: 'error'
+            });
         }
 
         if (starredStatus !== 200) {
-            addToast('Não foi possivel encontrar favoritos o usuário');
+            addToast('Não foi possivel encontrar favoritos o usuário', {
+                appearance: 'error'
+            });
         }
 
         return {
@@ -69,7 +73,13 @@ const UserProvider: React.FC = ({ children }) => {
             const { items: userItems } = userData;
 
             if (userStatus !== 200) {
-                addToast('Não foi possivel encontrar o usuário');
+                addToast('Não foi possivel encontrar o usuário', {
+                    appearance: 'error',
+                    autoDismiss: true,
+                    onDismiss: () => {
+                        document.location.reload();
+                    }
+                });
                 return
             }
 
@@ -81,7 +91,9 @@ const UserProvider: React.FC = ({ children }) => {
         const { status, data } = await githubClient.GET({ url: '/users?per_page=100' });
 
         if (status !== 200) {
-            addToast('Não foi possivel fazer o carregamento dos usuários');
+            addToast('Não foi possivel fazer o carregamento dos usuários', {
+                appearance: 'error'
+            });
         }
 
         setUsers(data);

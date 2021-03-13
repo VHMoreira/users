@@ -9,7 +9,7 @@
     padding: 20px 5px;
 }
 
-.tabs{
+.user-tabs{
     margin-top: 20px;
     width: 100%;
     max-height: 100px;
@@ -20,7 +20,7 @@
     border-bottom: 1px solid rgb(43, 43, 43);
 }
 
-.tabs-button{
+.user-tabs__button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,17 +38,17 @@
     }
 }
 
-.tabs-button:hover{
+.user-tabs__button:hover{
     color: white;
     background-color: $secondaryColor;
 }
 
-.tabs-button--active{
+.user-tabs__button--active{
     color: white;
     background-color: $secondaryColor;
 }
 
-.repository{
+.user-repository{
     display: flex;
     align-items: center;
     width: 100%;

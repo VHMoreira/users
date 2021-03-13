@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaSearch } from "react-icons/fa";
-import { useUser } from '../../../../../../providers/UserProvider';
+import { useUser } from '../../../providers/UserProvider';
 
 import './styles.scss';
 

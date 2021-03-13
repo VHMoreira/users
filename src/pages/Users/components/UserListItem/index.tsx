@@ -16,10 +16,10 @@ const UserListItem: React.FC<Props> = ({ children, user }) => {
             className="item"
             to={`/user/${user.login}`}>
 
-            <img className="item-avatar" src={user.avatar_url} alt="VHMoreira" />
-            <div className="info">
-                <span className="info-name">{user.login}</span>
-                <span className="info-login">{user.html_url}</span>
+            <img className="item-avatar" src={user.avatar_url} alt={user.login} />
+            <div className="item-info">
+                <span className="item-info__name">{user.login}</span>
+                <span className="item-info__login">{user.html_url}</span>
             </div>
             <FaChevronRight size={25} />
         </Link>

@@ -17,17 +17,17 @@ const RepositoryListItem: React.FC<Props> = ({ children, repository }) => {
             className="item"
             href={repository.html_url}>
             <img className="item-avatar" src={repository.owner.avatar_url} alt={repository.full_name} />
-            <div className="info">
-                <span className="info-name">{repository.name}</span>
-                <span className="info-clone">{repository.language}</span>
-                <section className="info-stats">
-                    <span className="info-stats__numbers">
+            <div className="item-info">
+                <span className="item-info__name">{repository.name}</span>
+                <span className="item-info__language">{repository.language}</span>
+                <section className="item-info__stats">
+                    <span className="item-info__stats__numbers">
                         <FaStar />{formatStatsNumbers(repository.stargazers_count)}
                     </span>
-                    <span className="info-stats__numbers">
+                    <span className="item-info__stats__numbers">
                         <FaCodeBranch />{formatStatsNumbers(repository.forks_count)}
                     </span>
-                    <span className="info-stats__numbers">
+                    <span className="item-info__stats__numbers">
                         <FiAlertCircle />{formatStatsNumbers(repository.open_issues_count)}
                     </span>
                 </section>

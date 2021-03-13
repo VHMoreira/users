@@ -50,21 +50,21 @@ const UserDetails: React.FC = () => {
     return (
         <section className="user">
             <UserProfile user={user} />
-            <nav className="tabs">
+            <nav className="user-tabs">
                 <span
                     onClick={() => setSelectedTab(0)}
-                    className={`tabs-button ${selectedTab === 0 && 'tabs-button--active'}`}>
+                    className={`user-tabs__button ${selectedTab === 0 && 'user-tabs__button--active'}`}>
                     <FaFolder />
                     Repositórios
                 </span>
                 <span
                     onClick={() => setSelectedTab(1)}
-                    className={`tabs-button ${selectedTab === 1 && 'tabs-button--active'}`}>
+                    className={`user-tabs__button ${selectedTab === 1 && 'user-tabs__button--active'}`}>
                     <FaStar />
                     Curtidos
                 </span>
             </nav>
-            <section className='repository'>
+            <section className='user-repository'>
                 <List>
                     <SelectedList />
                 </List>
