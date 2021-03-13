@@ -10,7 +10,7 @@ const Users: React.FC = () => {
     return (
         <section className="users">
             <List>
-                {users.map(user => <UserListItem user={user} />)}
+                {users.map(user => <UserListItem key={user.id} user={user} />)}
             </List>
         </section>
     );
