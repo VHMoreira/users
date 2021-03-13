@@ -8,7 +8,7 @@ const Title: React.FC = () => {
         <section className="title">
             <FaHome className="title-icon" size={30} />
             <span className="title-name">
-                Busca de usuários
+                GitView
             </span>
         </section>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaChevronRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import User from '../../../../models/User';
 
 import './styles.scss';
@@ -10,7 +11,10 @@ interface Props {
 
 const UserListItem: React.FC<Props> = ({ children, user }) => {
     return (
-        <li key={user.id} className="item">
+        <Link
+            key={user.id}
+            className="item"
+            to={`/user/${user.login}`}>
 
             <img className="item-avatar" src={user.avatar_url} alt="VHMoreira" />
             <div className="info">
@@ -18,7 +22,7 @@ const UserListItem: React.FC<Props> = ({ children, user }) => {
                 <span className="info-login">{user.html_url}</span>
             </div>
             <FaChevronRight size={25} />
-        </li>
+        </Link>
     );
 }
 

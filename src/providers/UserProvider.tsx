@@ -1,15 +1,23 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
 import { toast } from 'react-toastify';
+import Repository from '../models/Repository';
 import User from '../models/User';
 import GithubClient from '../services/impl/github';
 
 interface SearchRequest {
-    login: string
+    name: string
+}
+
+interface DetailsResponse {
+    user: User;
+    repos: Repository;
+    starred: Repository;
 }
 interface UserContextData {
     users: User[];
     loadUsers(): Promise<void>;
     searchUsers(search: SearchRequest): Promise<void>;
+    getUserDetail(username: string): Promise<any>;
 }
 
 const UserContext = createContext<UserContextData>({} as UserContextData);
@@ -19,30 +27,52 @@ const githubClient = new GithubClient();
 const UserProvider: React.FC = ({ children }) => {
     const [users, setUsers] = useState<User[]>([]);
 
-    const searchUsers = useCallback(async ({ login }: SearchRequest) => {
-        const { status, data } = await githubClient.GET({ url: `/search/users?q=${login}` });
-        const { items, total_count } = data;
+    const getUserDetail = useCallback(async (username: string): Promise<DetailsResponse> => {
+        // const { status: userStatus, data: userData } = await githubClient.GET({ url: `https://api.github.com/users/${username}` });
+        const [userResponse, reposResponse, starredResponse] = await Promise.all([
+            githubClient.GET({ url: `https://api.github.com/users/${username}` }),
+            githubClient.GET({ url: `https://api.github.com/users/${username}/repos` }),
+            githubClient.GET({ url: `https://api.github.com/users/${username}/starred` })
+        ]);
 
-        if (status !== 200 || total_count === 0) {
+        const { status: userStatus, data: userData } = userResponse;
+        const { status: reposStatus, data: reposData } = reposResponse;
+        const { status: starredStatus, data: starredData } = starredResponse;
+
+        if (userStatus !== 200) {
             toast('Não foi possivel encontrar o usuário');
-            return
         }
 
-        console.log(items);
+        if (reposStatus !== 200) {
+            toast('Não foi possivel encontrar repositórios do usuário');
+        }
 
-        const formatUsers = items.map((item: any): User => {
-            return {
-                id: item.id,
-                login: item.login,
-                avatar_url: `${item.html_url}.png`,
-                repos_url: item.repos_url,
-                starred_url: item.starred_url,
-                url: item.url,
-                html_url: item.html_url
+        if (starredStatus !== 200) {
+            toast('Não foi possivel encontrar favoritos o usuário');
+        }
+
+        return {
+            user: userData,
+            repos: reposData,
+            starred: starredData
+        };
+    }, []);
+
+    const searchUsers = useCallback(async ({ name }: SearchRequest) => {
+        if (name.length > 3) {
+
+
+            const { status: userStatus, data: userData } = await githubClient.GET({ url: `/search/users?q=${name}` });
+
+            const { items: userItems } = userData;
+
+            if (userStatus !== 200) {
+                toast('Não foi possivel encontrar o usuário');
+                return
             }
-        });
 
-        setUsers(formatUsers);
+            setUsers(userItems);
+        }
     }, []);
 
     const loadUsers = useCallback(async (): Promise<void> => {
@@ -52,24 +82,12 @@ const UserProvider: React.FC = ({ children }) => {
             toast('Não foi possivel fazer o carregamento dos usuários');
         }
 
-        const formatUsers = data.map((item: any): User => {
-            return {
-                id: item.id,
-                login: item.login,
-                avatar_url: `${item.html_url}.png`,
-                repos_url: item.repos_url,
-                starred_url: item.starred_url,
-                url: item.url,
-                html_url: item.html_url
-            }
-        });
-
-        setUsers(formatUsers);
+        setUsers(data);
     }, [])
 
 
     return (
-        <UserContext.Provider value={{ users, loadUsers, searchUsers }}>
+        <UserContext.Provider value={{ users, loadUsers, searchUsers, getUserDetail }}>
             {children}
         </UserContext.Provider>
     );
