@@ -8,13 +8,9 @@ import store from './store';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <ToastProvider> */}
-    {/* <UserProvider> */}
     <Provider store={store}>
       <App />
     </Provider>
-    {/* </UserProvider> */}
-    {/* </ToastProvider> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

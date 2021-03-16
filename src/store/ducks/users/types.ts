@@ -3,7 +3,10 @@ import { User } from "../../../models/User";
 export enum UsersTypes {
     LOAD_USERS_REQUEST = '@users/LOAD_USERS_REQUEST',
     LOAD_USERS_SUCCESS = '@users/LOAD_USERS_SUCCESS',
-    LOAD_USERS_FAILURE = '@users/LOAD_USERS_FAILURE'
+    LOAD_USERS_FAILURE = '@users/LOAD_USERS_FAILURE',
+    SEARCH_USERS_REQUEST = '@users/SEARCH_USERS_REQUEST',
+    SEARCH_USERS_SUCCESS = '@users/SEARCH_USERS_SUCCESS',
+    SEARCH_USERS_FAILURE = '@users/SEARCH_USERS_FAILURE'
 };
 
 export interface UsersState {

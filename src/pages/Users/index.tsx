@@ -24,7 +24,6 @@ interface OwnProps {
 type Props = StateProps & DispatchProps & OwnProps;
 
 const Users: React.FC<Props> = ({ users, loadUsersRequest }) => {
-    // const { users } = useUser();
     useEffect(() => {
         loadUsersRequest();
     }, []);
