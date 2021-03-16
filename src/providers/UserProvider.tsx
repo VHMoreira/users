@@ -1,7 +1,7 @@
 import React, { createContext, useState, useContext, useCallback } from 'react';
 import { useToasts } from 'react-toast-notifications';
 import Repository from '../models/Repository';
-import User from '../models/User';
+import { User } from '../models/User';
 import GithubClient from '../services/impl/github';
 
 interface SearchRequest {

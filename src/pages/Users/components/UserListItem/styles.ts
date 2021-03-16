@@ -1,40 +1,40 @@
-@import '../../../../shared/styles/global.scss';
+import styled from 'styled-components';
 
-.item{
+export const Item = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 100%;
     height: 70px;
     padding: 10px;
-    background-color: $secondaryColor;
+    background-color: #0a0442;
     cursor: pointer;
 
-    &+a{
-        margin-top: 30px;
+    &+section{
+        margin-top: 15px;
     }
-}
+`;
 
-.item-avatar{
+export const Avatar = styled.img`
     border-radius: 50%;
     height: 100%;
-}
+`;
 
-.item-info{
+export const Info = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 10px;
-}
+`;
 
-.item-info__name{
-    font-weight: $fontMedium;
+export const InfoName = styled.span`
+    font-weight: 600;
     font-size: 1.2rem;
-}
+`;
 
-.item-info__login{
+export const InfoAge = styled.span`
     font-size: 1rem;
-    font-weight: $fontMedium;
+    font-weight: 600;
     color: rgb(131, 131, 131);
-}
+`;

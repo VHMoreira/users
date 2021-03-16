@@ -1,43 +1,42 @@
-@import '../../../../shared/styles/global.scss';
+import styled from 'styled-components';
 
-.profile{
+export const ProfileContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     max-width: 900px;
-}
+`;
 
-.profile-avatar{
+export const ProfileAvatar = styled.img`
     max-width: 200px;
     border-radius: 50%;
-}
+`;
 
-.profile-name{
+export const ProfileName = styled.span`
     margin-top: 20px;
-    font-weight: $fontBold;
+    font-weight: 700;
     font-size: 2rem;
-    border-bottom: 3px solid $accentColor;
-}
+    border-bottom: 3px solid #0053fb;
+`;
 
-.profile-stats{
+export const ProfileStats = styled.section`
     margin-top: 20px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
+`;
 
-.profile-stats__numbers{
-    font-weight: $fontBold;
+export const StatsNumber = styled.span`
+    font-weight: 700;
     font-size: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 
     svg{
-        color: $accentColor;
+        color: #0053fb;
         margin-right: 10px;
     }
-
-}
+`;

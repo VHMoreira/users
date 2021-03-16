@@ -1,10 +1,9 @@
 import React from 'react';
-import { FaFolder } from 'react-icons/fa';
-import { RiUserReceived2Fill, RiUserSharedFill } from 'react-icons/ri'
-import User from '../../../../models/User';
+// import { FaFolder } from 'react-icons/fa';
+// import { RiUserReceived2Fill, RiUserSharedFill } from 'react-icons/ri'
+import { User } from '../../../../models/User';
+import { ProfileContainer } from './styles';
 
-
-import './styles.scss';
 
 interface Props {
     user: User;
@@ -13,10 +12,10 @@ interface Props {
 const UserProfile: React.FC<Props> = ({ user }) => {
 
     return (
-        <section className="profile">
-            <img className="profile-avatar" src={user.avatar_url} alt={user.name} />
-            <a className="profile-name" href={user.html_url}>{user.name}</a>
-            <section className="profile-stats">
+        <ProfileContainer>
+            <img className="profile-avatar" src={user.picture.medium} alt={user.name.first} />
+            <span className="profile-name" >{`${user.name.first} ${user.name.last}`}</span>
+            {/* <section className="profile-stats">
                 <span className="profile-stats__numbers">
                     <FaFolder size={20} />
                     {user.public_repos}
@@ -29,8 +28,8 @@ const UserProfile: React.FC<Props> = ({ user }) => {
                     <RiUserSharedFill size={20} />
                     {user.following}
                 </span>
-            </section>
-        </section>
+            </section> */}
+        </ProfileContainer>
     );
 }
 

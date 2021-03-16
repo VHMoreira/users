@@ -1,15 +1,15 @@
-@import '../../shared/styles/global.scss';
+import styled from 'styled-components';
 
-.user{
+export const UserDetailContainer = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     max-width: 100%;
     padding: 20px 5px;
-}
+`;
 
-.user-tabs{
+export const Tabs = styled.nav`
     margin-top: 20px;
     width: 100%;
     max-height: 100px;
@@ -18,9 +18,9 @@
     justify-content: space-around;
     padding: 20px 0;
     border-bottom: 1px solid rgb(43, 43, 43);
-}
+`;
 
-.user-tabs__button{
+export const TabButton = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,20 +36,4 @@
     svg{
         margin-right: 10px;
     }
-}
-
-.user-tabs__button:hover{
-    color: white;
-    background-color: $secondaryColor;
-}
-
-.user-tabs__button--active{
-    color: white;
-    background-color: $secondaryColor;
-}
-
-.user-repository{
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
+`;

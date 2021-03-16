@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { TitleContainer } from './styles';
 
-import './styles.scss';
 
 const Title: React.FC = () => {
     return (
-        <section className="title">
-            <Link className="title-name" to="/">
+        <TitleContainer>
+            <Link to="/">
                 GitView
             </Link>
-        </section>
+        </TitleContainer>
     );
 }
 

@@ -1,16 +1,15 @@
 import React from 'react';
 import { FaSearch } from "react-icons/fa";
 import { useUser } from '../../../providers/UserProvider';
-
-import './styles.scss';
+import { InputContainer, InputField } from './styled';
 
 const SearchField: React.FC = () => {
     const { searchUsers } = useUser();
     return (
-        <div className='input'>
-            <input className="input-field" placeholder='Buscar usuário' type="text" onChange={async ({ target }) => await searchUsers({ name: target.value })} />
-            <FaSearch className="input-icon" size={18} />
-        </div>
+        <InputContainer>
+            <InputField placeholder='Buscar usuário' type="text" onChange={async ({ target }) => await searchUsers({ name: target.value })} />
+            <FaSearch size={18} />
+        </InputContainer>
     );
 }
 

@@ -1,12 +1,11 @@
 import React from 'react';
-
-import './styles.scss';
+import { ListContainer } from './styles';
 
 const List: React.FC = ({ children }) => {
     return (
-        <ul className="list">
+        <ListContainer>
             {children}
-        </ul>
+        </ListContainer>
     );
 }
 
