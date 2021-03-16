@@ -3,7 +3,6 @@ import { FaFolder, FaStar } from 'react-icons/fa';
 import { useRouteMatch } from 'react-router-dom';
 // import Repository from '../../models/Repository';
 import { User } from '../../models/User';
-import { useUser } from '../../providers/UserProvider';
 // import List from '../../shared/components/List';
 // import RepositoryListItem from './components/RepositoryListItem';
 import UserProfile from './components/UserProfile';
@@ -14,19 +13,18 @@ interface UserDetailParams {
 
 const UserDetails: React.FC = () => {
     const { params } = useRouteMatch<UserDetailParams>();
-    const { getUserDetail } = useUser();
     const [selectedTab, setSelectedTab] = useState(0);
     const [user, setUsers] = useState<User>({} as User);
     // const [repos, setRepos] = useState<Repository[]>([]);
     // const [starred, setStarred] = useState<Repository[]>([]);
 
     useEffect(() => {
-        getUserDetail(params.username).then(({ user, repos, starred }) => {
-            setUsers(user);
-            // setRepos(repos);
-            // setStarred(starred);
-        });
-    }, [params.username, getUserDetail]);
+        // getUserDetail(params.username).then(({ user, repos, starred }) => {
+        //     setUsers(user);
+        //     // setRepos(repos);
+        //     // setStarred(starred);
+        // });
+    }, [params.username]);
 
     // const SelectedList = () => {
     //     switch (selectedTab) {
