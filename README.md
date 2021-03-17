@@ -35,11 +35,11 @@
 
 > yarn server
 
-3 - e rode o frontend:
+4 - e rode o frontend:
 
 > yarn start
 
-4 - Para acessar a aplicação digite no navegador de seu computador:
+5 - Para acessar a aplicação digite no navegador de seu computador:
 
 > http://localhost:3001/
 
