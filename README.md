@@ -2,7 +2,7 @@
     <img alt="logo" width='25%' src="https://github.com/VHMoreira/gitview/blob/main/public/octo.png"/>
 </p>
 
-<h1 align="center"> Gitview </h1>
+<h1 align="center"> Gitusers </h1>
 
 ## Sumario
 
@@ -12,10 +12,10 @@
 - Instalação
 
 ## Funcionalidades
-- Buscar usuários no github
-- Visualizar detalhes do usuário
-- Visualizar repositórios do usuário
-- Visualizar repositórios curtidos pelo usuário
+- Buscar usuários por nome
+- Listar usuários
+- Filtrar usuário por estado
+- Filtrar usuário por celular
 
 ## Requisitos
 - Node.js
@@ -33,9 +33,13 @@
 
 3 - Após o download das dependências, rode o servidor:
 
+> yarn server
+
+3 - e rode o frontend:
+
 > yarn start
 
 4 - Para acessar a aplicação digite no navegador de seu computador:
 
-> http://localhost:3000/
+> http://localhost:3001/
 
