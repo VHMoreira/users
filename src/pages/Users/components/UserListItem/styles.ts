@@ -8,7 +8,6 @@ export const Item = styled.section`
     height: 70px;
     padding: 10px;
     background-color: #0a0442;
-    cursor: pointer;
 
     &+section{
         margin-top: 15px;
@@ -34,17 +33,8 @@ export const InfoName = styled.span`
     font-size: 1.2rem;
 `;
 
-export const InfoDetail = styled.section`
-    display: flex;
-    width: 100%;
-`;
-
-export const InfoAge = styled.span`
+export const InfoCell = styled.span`
     font-size: 1rem;
     font-weight: 600;
     color: rgb(131, 131, 131);
-
-    &+span{
-        margin-left: 10px
-    }
 `;

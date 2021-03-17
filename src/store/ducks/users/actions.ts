@@ -2,7 +2,12 @@ import { action } from "typesafe-actions";
 import { UsersTypes } from './types';
 import { User } from '../../../models/User';
 
-export const loadUsersRequest = (page: number) => action(UsersTypes.LOAD_USERS_REQUEST, page);
+export interface Query {
+    state: string;
+    cell: string;
+}
+
+export const loadUsersRequest = (page: number, query?: Query) => action(UsersTypes.LOAD_USERS_REQUEST, { page, query });
 export const loadUsersSucces = (data: User[]) => action(UsersTypes.LOAD_USERS_SUCCESS, { data });
 export const loadUsersFailure = () => action(UsersTypes.LOAD_USERS_FAILURE);
 
