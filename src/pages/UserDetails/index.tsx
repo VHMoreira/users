@@ -3,8 +3,7 @@ import { FaFolder, FaStar } from 'react-icons/fa';
 import { useRouteMatch } from 'react-router-dom';
 // import Repository from '../../models/Repository';
 import { User } from '../../models/User';
-// import List from '../../shared/components/List';
-// import RepositoryListItem from './components/RepositoryListItem';
+import List from '../../shared/components/List';
 import UserProfile from './components/UserProfile';
 import { TabButton, Tabs, UserDetailContainer } from './styles';
 interface UserDetailParams {
@@ -15,8 +14,6 @@ const UserDetails: React.FC = () => {
     const { params } = useRouteMatch<UserDetailParams>();
     const [selectedTab, setSelectedTab] = useState(0);
     const [user, setUsers] = useState<User>({} as User);
-    // const [repos, setRepos] = useState<Repository[]>([]);
-    // const [starred, setStarred] = useState<Repository[]>([]);
 
     useEffect(() => {
         // getUserDetail(params.username).then(({ user, repos, starred }) => {
@@ -27,20 +24,20 @@ const UserDetails: React.FC = () => {
     }, [params.username]);
 
     // const SelectedList = () => {
-    //     switch (selectedTab) {
-    //         case 1:
-    //             return (
-    //                 <>
-    //                     {starred.map(star => <RepositoryListItem key={star.id} repository={star} />)}
-    //                 </>
-    //             );
-    //         default:
-    //             return (
-    //                 <>
-    //                     {repos.map(repo => <RepositoryListItem key={repo.id} repository={repo} />)}
-    //                 </>
-    //             );
-    //     }
+    // switch (selectedTab) {
+    //     case 1:
+    //         return (
+    //             <>
+    //                 {starred.map(star => <RepositoryListItem key={star.id} repository={star} />)}
+    //             </>
+    //         );
+    //     default:
+    //         return (
+    //             <>
+    //                 {repos.map(repo => <RepositoryListItem key={repo.id} repository={repo} />)}
+    //             </>
+    //         );
+    // }
     // }
 
     return (
@@ -51,20 +48,26 @@ const UserDetails: React.FC = () => {
                     onClick={() => setSelectedTab(0)}
                     className={`user-tabs__button ${selectedTab === 0 && 'user-tabs__button--active'}`}>
                     <FaFolder />
-                    Repositórios
+                    Pessoal
                 </TabButton>
                 <TabButton
                     onClick={() => setSelectedTab(1)}
                     className={`user-tabs__button ${selectedTab === 1 && 'user-tabs__button--active'}`}>
                     <FaStar />
-                    Curtidos
+                    Endereço
+                </TabButton>
+                <TabButton
+                    onClick={() => setSelectedTab(1)}
+                    className={`user-tabs__button ${selectedTab === 1 && 'user-tabs__button--active'}`}>
+                    <FaStar />
+                    Contato
                 </TabButton>
             </Tabs>
-            {/* <section className='user-repository'>
+            <section className='user-repository'>
                 <List>
-                    <SelectedList />
+                    {/* <SelectedList /> */}
                 </List>
-            </section> */}
+            </section>
         </UserDetailContainer>
     );
 }

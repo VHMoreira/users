@@ -1,6 +1,4 @@
 import React from 'react';
-// import { FaFolder } from 'react-icons/fa';
-// import { RiUserReceived2Fill, RiUserSharedFill } from 'react-icons/ri'
 import { User } from '../../../../models/User';
 import { ProfileContainer } from './styles';
 

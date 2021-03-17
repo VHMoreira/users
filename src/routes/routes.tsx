@@ -7,7 +7,7 @@ import Users from '../pages/Users';
 const Routes: React.FC = () => (
     <Switch>
         <Route exact path='/' component={Users} />
-        {/* <Route path='/user/:username+' component={UserDetails} /> */}
+        <Route path='/user/:email+' component={UserDetails} />
     </Switch>
 );
 
