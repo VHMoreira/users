@@ -22,9 +22,10 @@ export const Avatar = styled.img`
 
 export const Info = styled.div`
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 10px;
 `;
 
@@ -33,8 +34,17 @@ export const InfoName = styled.span`
     font-size: 1.2rem;
 `;
 
+export const InfoDetail = styled.section`
+    display: flex;
+    width: 100%;
+`;
+
 export const InfoAge = styled.span`
     font-size: 1rem;
     font-weight: 600;
     color: rgb(131, 131, 131);
+
+    &+span{
+        margin-left: 10px
+    }
 `;
